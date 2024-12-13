@@ -1,0 +1,11 @@
+﻿  Scene.cpp
+  Shader.cpp
+C:\Direct_Homework3\3D게임2 과제03(서가은-2022182018)\Scene.cpp(691,3): warning C4065: switch문에 'default'가 있으나 'case' 레이블이 없습니다.
+  (소스 파일 '/Scene.cpp'을(를) 컴파일하는 중)
+  
+  코드를 생성하고 있습니다.
+  6 of 1079 functions ( 0.6%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    12 functions had inline decision re-evaluated but remain unchanged
+  코드를 생성했습니다.
+  LabProject08-0-1.vcxproj -> C:\Direct_Homework3\3D게임2 과제03(서가은-2022182018)\x64\Release\LabProject08-0-1.exe

@@ -1,0 +1,36 @@
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+/3D게임2 과제02(서가은-2022182018)/LabProject08-0-1/x64
+/3D게임2 과제02(서가은-2022182018)/.vs
+/3D게임2 과제02(서가은-2022182018)/x64
+/3D게임2 과제03(서가은-2022182018)/.vs
