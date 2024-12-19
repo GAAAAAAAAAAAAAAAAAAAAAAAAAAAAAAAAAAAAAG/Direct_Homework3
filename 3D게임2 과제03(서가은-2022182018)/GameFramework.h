@@ -20,7 +20,14 @@ struct CB_FRAMEWORK_INFO
 	int						m_nFlareParticlesToEmit = 300;
 	XMFLOAT3				m_xmf3Gravity = XMFLOAT3(0.0f, -9.8f, 0.0f);
 	int						m_nMaxFlareType2Particles = 150;
+
+	//추가3
+	UINT					m_nRenderMode;
 };
+
+//추가3
+#define DYNAMIC_TESSELLATION		0x10
+#define DEBUG_TESSELLATION			0x20
 
 class CGameFramework
 {

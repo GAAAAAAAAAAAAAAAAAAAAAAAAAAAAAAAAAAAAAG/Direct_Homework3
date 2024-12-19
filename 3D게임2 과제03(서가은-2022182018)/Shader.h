@@ -24,11 +24,19 @@ protected:
 	//추가2//
 	ID3DBlob*							m_pd3dGeometryShaderBlob = NULL;
 	////////
+	//추가3//
+	ID3DBlob*							m_pd3dHullShaderBlob = NULL;
+	ID3DBlob*							m_pd3dDomainShaderBlob = NULL;
+	///////
 
 	int									m_nPipelineStates = 0;
 	ID3D12PipelineState**				m_ppd3dPipelineStates = NULL;
 
 	D3D12_GRAPHICS_PIPELINE_STATE_DESC	m_d3dPipelineStateDesc;
+
+	//추가3
+	ID3D12RootSignature* m_pd3dGraphicsRootSignature = NULL;
+	//
 
 public:
 	void AddRef() { m_nReferences++; }
@@ -169,6 +177,28 @@ public:
 	virtual D3D12_SHADER_BYTECODE CreatePixelShader();
 
 	virtual void CreateShader(ID3D12Device* pd3dDevice, ID3D12GraphicsCommandList* pd3dCommandList, ID3D12RootSignature* pd3dGraphicsRootSignature);
+};
+
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//추가3
+class CTerrainTessellationShader : public CShader
+{
+public:
+	CTerrainTessellationShader();
+	virtual ~CTerrainTessellationShader();
+
+	virtual D3D12_INPUT_LAYOUT_DESC CreateInputLayout();
+	virtual D3D12_RASTERIZER_DESC CreateRasterizerState();
+
+	virtual void CreateShader(ID3D12Device* pd3dDevice, ID3D12GraphicsCommandList* pd3dCommandList, ID3D12RootSignature* pd3dGraphicsRootSignature);
+
+	virtual D3D12_SHADER_BYTECODE CreateVertexShader();
+	virtual D3D12_SHADER_BYTECODE CreatePixelShader();
+	virtual D3D12_SHADER_BYTECODE CreateDomainShader();
+	virtual D3D12_SHADER_BYTECODE CreateHullShader();
+
+	//virtual void OnPrepareRender(ID3D12GraphicsCommandList* pd3dCommandList, CCamera* pCamera, void* pContext);
+	virtual void OnPrepareRender(ID3D12GraphicsCommandList* pd3dCommandList, int nPipelineState = 0);
 };
 
 class CBillboardObjectsShader : public CObjectsShader

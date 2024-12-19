@@ -546,7 +546,7 @@ ID3D12RootSignature *CScene::CreateGraphicsRootSignature(ID3D12Device *pd3dDevic
 
 	pd3dRootParameters[7].ParameterType = D3D12_ROOT_PARAMETER_TYPE_32BIT_CONSTANTS;	//b3
 	//pd3dRootParameters[7].Constants.Num32BitValues = 4;
-	pd3dRootParameters[7].Constants.Num32BitValues = 10;
+	pd3dRootParameters[7].Constants.Num32BitValues = 11;	//수정3 10->11
 	pd3dRootParameters[7].Constants.ShaderRegister = 3;
 	pd3dRootParameters[7].Constants.RegisterSpace = 0;
 	pd3dRootParameters[7].ShaderVisibility = D3D12_SHADER_VISIBILITY_ALL;
@@ -640,6 +640,7 @@ void CScene::UpdateShaderVariables(ID3D12GraphicsCommandList *pd3dCommandList)
 	pd3dCommandList->SetGraphicsRoot32BitConstants(7, 1, &gfSecondsPerFirework, 7);
 	pd3dCommandList->SetGraphicsRoot32BitConstants(7, 1, &gnFlareParticlesToEmit, 8);
 	pd3dCommandList->SetGraphicsRoot32BitConstants(7, 1, &gnMaxFlareType2Particles, 9);
+	pd3dCommandList->SetGraphicsRoot32BitConstants(7, 1, &gnRenderMode, 10);	//추가3
 
 }
 

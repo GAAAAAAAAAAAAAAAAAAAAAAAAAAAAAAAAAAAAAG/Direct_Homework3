@@ -75,6 +75,16 @@ using Microsoft::WRL::ComPtr;
 #define PARAMETER_SKYBOX_CUBE_TEXTURE	4
 #endif
 
+//추가3--
+#define _WITH_TERRAIN_TESSELATION
+
+#ifdef _WITH_TERRAIN_TESSELATION
+#define _WITH_TERRAIN_PARTITION
+#else
+#define _WITH_VERTICES_AS_SCALING
+#endif
+//------
+
 #pragma comment(lib, "d3dcompiler.lib")
 #pragma comment(lib, "d3d12.lib")
 #pragma comment(lib, "dxgi.lib")
@@ -91,6 +101,10 @@ using Microsoft::WRL::ComPtr;
 extern UINT gnCbvSrvDescriptorIncrementSize;
 extern UINT	gnRtvDescriptorIncrementSize;
 extern UINT gnDsvDescriptorIncrementSize;
+
+//추가3
+extern bool gbTerrainTessellationWireframe;
+//
 
 extern void SynchronizeResourceTransition(ID3D12GraphicsCommandList* pd3dCommandList, ID3D12Resource* pd3dResource, D3D12_RESOURCE_STATES d3dStateBefore, D3D12_RESOURCE_STATES d3dStateAfter);
 extern void WaitForGpuComplete(ID3D12CommandQueue* pd3dCommandQueue, ID3D12Fence* pd3dFence, UINT64 nFenceValue, HANDLE hFenceEvent);

@@ -355,6 +355,20 @@ void CGameFramework::OnProcessingKeyboardMessage(HWND hWnd, UINT nMessageID, WPA
 				case VK_TAB:
 					is_visiblity = !is_visiblity;
 					break;
+					//Ãß°¡3---
+				case 'R':
+					m_pcbMappedFrameworkInfo->m_nRenderMode = 0x00;
+					break;
+				case 'Y':
+					m_pcbMappedFrameworkInfo->m_nRenderMode |= DYNAMIC_TESSELLATION;
+					break;
+				case 'D':
+					m_pcbMappedFrameworkInfo->m_nRenderMode |= (DYNAMIC_TESSELLATION | DEBUG_TESSELLATION);
+					break;
+				case 'W':
+					::gbTerrainTessellationWireframe = !::gbTerrainTessellationWireframe;
+					break;
+					//------
 				default:
 					break;
 			}

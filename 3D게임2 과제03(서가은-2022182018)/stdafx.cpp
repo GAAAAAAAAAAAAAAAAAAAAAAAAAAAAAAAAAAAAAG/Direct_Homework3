@@ -10,6 +10,9 @@
 //추가2---
 int gnCurrentParticles = 0;
 //--------
+//추가3
+bool gbTerrainTessellationWireframe = false;
+//
 
 UINT gnRtvDescriptorIncrementSize = 0;
 UINT gnDsvDescriptorIncrementSize = 0;

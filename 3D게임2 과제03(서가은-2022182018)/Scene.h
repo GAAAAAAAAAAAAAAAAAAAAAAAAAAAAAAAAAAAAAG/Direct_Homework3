@@ -144,6 +144,7 @@ public:
 	float								gfSecondsPerFirework = 1.0f;
 	int									gnFlareParticlesToEmit = 150;
 	int									gnMaxFlareType2Particles = 300;
+	UINT								gnRenderMode=0.0f;
 	//
 
 	CGameObject** m_Objects = nullptr;
