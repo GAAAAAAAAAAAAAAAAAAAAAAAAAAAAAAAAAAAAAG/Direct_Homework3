@@ -147,7 +147,7 @@ float4 PSStandard(VS_STANDARD_OUTPUT input) : SV_TARGET
     float3 toEyeW = normalize(gvCameraPosition - input.positionW);
     float3 r = reflect(-toEyeW, input.normalW);
     float4 reflectionColor = gtxtSkyCubeTexture.Sample(gssWrap, r);
-    //return reflectionColor;
+
     return (cColor + reflectionColor * 1.0f);
 }
 

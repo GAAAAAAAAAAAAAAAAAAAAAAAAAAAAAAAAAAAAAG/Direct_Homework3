@@ -1244,8 +1244,8 @@ CHeightMapTerrain::CHeightMapTerrain(ID3D12Device* pd3dDevice, ID3D12GraphicsCom
 	//Ãß°¡3----
 #ifdef _WITH_TERRAIN_TESSELATION
 	CTerrainTessellationShader* pTerrainShader = new CTerrainTessellationShader();
+	//CTerrainShader* pTerrainShader = new CTerrainShader();
 #else
-	CTerrainShader* pTerrainShader = new CTerrainShader();
 #endif
 	//---------
 

@@ -1277,7 +1277,7 @@ void CRiverShader::BuildObjects(ID3D12Device* pd3dDevice, ID3D12GraphicsCommandL
 
 	riverObject->SetMesh(0, pRiverMesh);
 	riverObject->Rotate(-90, 0, 0);
-	riverObject->SetPosition(- 1000, - 150, - 1000);	//빌보드 위치 변경에 따른 -1000,-300,-1000
+	riverObject->SetPosition(- 1000, - 110, - 1000);	//빌보드 위치 변경에 따른 -1000,-300,-1000
 
 	m_ppObjects[0] = riverObject;
 }
@@ -1918,11 +1918,11 @@ D3D12_SHADER_BYTECODE CTerrainTessellationShader::CreateDomainShader()
 
 void CTerrainTessellationShader::CreateShader(ID3D12Device* pd3dDevice, ID3D12GraphicsCommandList* pd3dCommandList, ID3D12RootSignature* pd3dGraphicsRootSignature)
 {
-	if (pd3dGraphicsRootSignature)
-	{
-		pd3dGraphicsRootSignature = pd3dGraphicsRootSignature;
-		pd3dGraphicsRootSignature->AddRef();
-	}
+	//if (pd3dGraphicsRootSignature)
+	//{
+	//	pd3dGraphicsRootSignature = pd3dGraphicsRootSignature;
+	//	pd3dGraphicsRootSignature->AddRef();
+	//}
 
 	m_nPipelineStates = 2;
 	m_ppd3dPipelineStates = new ID3D12PipelineState * [m_nPipelineStates];
@@ -1962,11 +1962,12 @@ void CTerrainTessellationShader::CreateShader(ID3D12Device* pd3dDevice, ID3D12Gr
 
 void CTerrainTessellationShader::OnPrepareRender(ID3D12GraphicsCommandList* pd3dCommandList, int nPipelineState)
 {
-	if (m_ppd3dPipelineStates) pd3dCommandList->SetPipelineState(m_ppd3dPipelineStates[nPipelineState]);
+	//if (m_ppd3dPipelineStates) pd3dCommandList->SetPipelineState(m_ppd3dPipelineStates[nPipelineState]);
 
 
 	if (m_pd3dGraphicsRootSignature) pd3dCommandList->SetGraphicsRootSignature(m_pd3dGraphicsRootSignature);
-	if (m_ppd3dPipelineStates) pd3dCommandList->SetPipelineState((::gbTerrainTessellationWireframe) ? m_ppd3dPipelineStates[1] : m_ppd3dPipelineStates[0]);
+	//if (m_ppd3dPipelineStates) pd3dCommandList->SetPipelineState((::gbTerrainTessellationWireframe) ? m_ppd3dPipelineStates[1] : m_ppd3dPipelineStates[0]);
+	if (m_ppd3dPipelineStates) pd3dCommandList->SetPipelineState(m_ppd3dPipelineStates[0]);
 
 	UpdateShaderVariables(pd3dCommandList);
 }
