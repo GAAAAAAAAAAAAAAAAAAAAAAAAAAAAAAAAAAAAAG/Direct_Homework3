@@ -453,7 +453,8 @@ void CGameFramework::BuildObjects()
 	WCHAR pstrOutputText[256];
 	//wcscpy_s(pstrOutputText, 256, L"살아있는 적 : \n");
 	
-	swprintf_s(pstrOutputText, 256, L"게임 고?\n", 5);
+	//swprintf_s(pstrOutputText, 256, L"게임 고?\n", 5);
+	swprintf_s(pstrOutputText, 256, L"\n");
 
 	m_pUILayer->UpdateTextOutputs(0, pstrOutputText, &d2dRect, pdwTextFormat, pd2dBrush);
 
